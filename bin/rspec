@@ -1,0 +1,18 @@
+#got this error in your Rubymine Test runner, and have to "spring stop" all the time?
+#/Users/maxwell/.rvm/gems/ruby-2.1.2/gems/activesupport-4.1.6/lib/active_support/dependencies.rb:247:in `require': cannot load such file -- teamcity/spec/runner/formatter/teamcity/formatter (LoadError)
+
+#!/usr/bin/env ruby
+begin
+load File.expand_path("../spring", __FILE__)
+rescue LoadError
+end
+require 'bundler/setup'
+
+
+rubymine_formatters = %w(/Applications/RubyMine.app/rb/testing/patch/bdd/teamcity/Applications/RubyMine.app/rb/testing/patch/common/teamcity)
+
+rubymine_formatters.each do |f|
+$:.unshift File.dirname(f) if File.exists?(f)
+end
+
+load Gem.bin_path('rspec-core', 'rspec')
