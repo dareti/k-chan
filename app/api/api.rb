@@ -12,7 +12,7 @@ module API
     end
 
     get '/history/:id', jbuilder:'history/detail' do
-      @history = History.find(params[:id])
+      @histories = History.where(customer_id: params[:id])
     end
     # mount Customer_API
   end
