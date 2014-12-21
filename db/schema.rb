@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20141220105627) do
     t.string   "customer_id", limit: 255
     t.datetime "check_day"
     t.string   "meter",       limit: 255
+    t.string   "last_meter",  limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
