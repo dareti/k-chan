@@ -1,6 +1,7 @@
 # -*- encoding: utf-8 -*-
 require 'rails_helper'
 require 'json_expressions/rspec'
+require 'factory_girl'
 #require 'factory_girl_rails'
 
 describe API::Base do
@@ -20,7 +21,7 @@ describe API::Base do
 
   describe 'POST /api/history' do
     context '正常な投稿' do
-      let!(:url) { "/api/history/testid" }
+      let!(:url) { "/api/history/#{FactoryGirl.create(:customer)[:id]}" }
       let!(:request_param) do
         { meter: 1919 }
       end

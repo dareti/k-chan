@@ -13,7 +13,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'grape'
 gem 'grape-jbuilder'
 gem 'pry'
-gem 'factory_girl'
+gem 'factory_girl_rails'
 gem 'thin'
 gem 'rake_shared_context'
 
@@ -26,6 +26,5 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'json_expressions'
   gem 'database_cleaner'
-  #gem 'factory_girl_rails'
 end
 
